@@ -21,12 +21,9 @@ Example, 1 m of snow over ice seen from air at 40 degrees under a 5 K sky::
 """
 
 from typing import NamedTuple
-
 import numpy as np
-
 from smrt.core.fresnel import fresnel_reflection_coefficients, snell_angle
 from smrt.core.lib import abs2
-
 from smrt_fullstokes.utils.permittivity import power_absorption_coefficient
 
 
@@ -98,5 +95,5 @@ def firn_profile(depth, density, temperature, dz_top=0.01, growth=1.05, dz_max=5
         bottom.append(bottom[-1] + min(dz_top * growth ** (len(bottom) - 1), dz_max))
     bottom = np.minimum(bottom, depth)  # the last layer ends at depth
     middle = (bottom[1:] + bottom[:-1]) / 2
-    ones = np.ones_like(middle)  # constant functions (lambda z: 350.0) give arrays too
+    ones = np.ones_like(middle)  
     return np.diff(bottom), density(middle) * ones, temperature(middle) * ones
