@@ -54,7 +54,7 @@ def rotate_stokes(tb, psi):
     """Return the Stokes vector tb in the basis x, y rotated by psi from v towards h.
 
     x = cos(psi) v + sin(psi) h and y = -sin(psi) v + cos(psi) h, so (x, y, k) stays right-handed. The TbV, TbH, Tb3
-    block is SMRT's Lmatrix (Matzler 2006, Eq. 3.20; Ulaby Eq. 12.26 when Tb3 = 0) and Tb4 is unchanged. Use -psi for
+    block is SMRT's Lmatrix (Matzler 2006, Eq. 3.21; Ulaby Eq. 12.26 when Tb3 = 0) and Tb4 is unchanged. Use -psi for
     the inverse rotation. For an antenna basis with (x, y, k) left-handed (y -> -y), change the sign of Tb3 and Tb4.
 
     Args:
